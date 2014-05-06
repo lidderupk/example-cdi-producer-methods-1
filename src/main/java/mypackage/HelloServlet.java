@@ -5,7 +5,6 @@ package mypackage;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.inject.Inject;
@@ -21,16 +20,16 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(urlPatterns = {"/HelloServlet"})
 public class HelloServlet extends HttpServlet {
-    
-    @Inject @Formal
+
+    @Inject
+    @Formal
     String greetingMessage;
-    
-    @Inject
-    private int maxNumber;
-    
-    @Inject
-    private Integer randomInt;
-    
+
+//    @Inject
+//    private int maxNumber;
+//    
+//    @Inject
+//    private Integer randomInt;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -46,6 +45,7 @@ public class HelloServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
+            out.println("<h2> Greeting: " + greetingMessage + "</h2>");
         }
     }
 
