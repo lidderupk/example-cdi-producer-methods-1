@@ -6,17 +6,23 @@
 
 package mypackage;
 
-import javax.ws.rs.Produces;
+import javax.enterprise.inject.Produces;
 
 /**
  *
  * @author ulidder
  */
-public class ProduceFormalGreeting {
+public class ProduceGreeting {
     
     @Produces
     @Formal
     public String GetFormalGreeting(){
         return "Good morning !";
+    }
+    
+    @Produces
+    @InFormal
+    public String GetInFormalGreeting(){
+        return "Hi there !";
     }
 }

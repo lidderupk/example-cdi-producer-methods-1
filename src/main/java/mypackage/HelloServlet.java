@@ -23,7 +23,11 @@ public class HelloServlet extends HttpServlet {
 
     @Inject
     @Formal
-    String greetingMessage;
+    String formalMessage;
+    
+    @Inject
+    @InFormal
+    String informalMessage;
 
 //    @Inject
 //    private int maxNumber;
@@ -45,7 +49,8 @@ public class HelloServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
-            out.println("<h2> Greeting: " + greetingMessage + "</h2>");
+            out.println("<h2> Formal Greeting: " + formalMessage + "</h2>");
+            out.println("<h2> Informal Greeting: " + informalMessage + "</h2>");
         }
     }
 
